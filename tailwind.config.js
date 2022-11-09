@@ -4,7 +4,11 @@ const colors = require('tailwindcss/colors')
 module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      scale: {
+        '104': '1.04',
+      }
+    },
   },
   plugins: [],
 });
