@@ -14,6 +14,7 @@ import Contact from './routes/contact';
 import Archive from './routes/archive';
 import Post from './routes/post'
 import Header from './components/header'
+import Footer from './components/footer'
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ root.render(
         <div className="container mx-auto px-3">
           <RouterProvider router={router} />
         </div>
+      <Footer />
     </ThemeProvider>
   </React.StrictMode>
 );
