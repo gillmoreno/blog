@@ -12,6 +12,7 @@ import Home from './routes/home';
 import About from './routes/about';
 import Contact from './routes/contact';
 import Archive from './routes/archive';
+import Post from './routes/post'
 import Header from './components/header'
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     path: "/archive",
     element: <Archive />,
   },
+  {
+    path: "/post/:postId",
+    element: <Post />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -38,7 +43,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider>
       <Header />
-        <RouterProvider router={router} />
+        <div className="container mx-auto px-3">
+          <RouterProvider router={router} />
+        </div>
     </ThemeProvider>
   </React.StrictMode>
 );

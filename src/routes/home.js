@@ -65,9 +65,22 @@ const otherBlogPosts = [
 export default function Root() {
   return (
     <>
-      <div className="container mx-auto px-3">
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-4">
-          {firstTwoBlogPosts.map((post) => (
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-4">
+        {firstTwoBlogPosts.map((post) => (
+          <div className="p-4">
+            <BlogPreview 
+              url={post.url}
+              image={post.image}
+              tags={post.tags} 
+              title={post.title}
+              date={post.date}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="flex">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-2">
+          {otherBlogPosts.map((post) => (
             <div className="p-4">
               <BlogPreview 
                 url={post.url}
@@ -78,21 +91,6 @@ export default function Root() {
               />
             </div>
           ))}
-        </div>
-        <div className="flex">
-          <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-2">
-            {otherBlogPosts.map((post) => (
-              <div className="p-4">
-                <BlogPreview 
-                  url={post.url}
-                  image={post.image}
-                  tags={post.tags} 
-                  title={post.title}
-                  date={post.date}
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </>
